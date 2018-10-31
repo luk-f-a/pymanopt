@@ -98,8 +98,8 @@ class ConjugateGradient(Solver):
             print(" iter\t\t   cost val\t    grad. norm")
 
         # Calculate initial cost-related quantities
-        cost = objective(x)
         grad = gradient(x)
+        cost = objective(x)
         gradnorm = man.norm(x, grad)
         Pgrad = problem.precon(x, grad)
         gradPgrad = man.inner(x, grad, Pgrad)
@@ -150,8 +150,8 @@ class ConjugateGradient(Solver):
                                                cost, df0)
 
             # Compute the new cost-related quantities for newx
-            newcost = objective(newx)
             newgrad = gradient(newx)
+            newcost = objective(newx)
             newgradnorm = man.norm(newx, newgrad)
             Pnewgrad = problem.precon(newx, newgrad)
             newgradPnewgrad = man.inner(newx, newgrad, Pnewgrad)
